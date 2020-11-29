@@ -5,5 +5,5 @@
 - to build the project run
 `mvn clean install`.
 "kafka-task-1.0-jar-with-dependencies.jar" will be created in "target" folder
-- put "kafka-task-1.0-jar-with-dependencies.jar" on master VM and execute it
+- put "kafka-task-1.0-jar-with-dependencies.jar" on master VM and execute
 `java -jar kafka-task-1.0-jar-with-dependencies.jar`
