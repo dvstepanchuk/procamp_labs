@@ -28,8 +28,7 @@ THIS_PATH=$(dirname "$THIS_FILE")
 BASE_PATH=$(readlink -f "$THIS_PATH/../")
 #APP_PATH="$THIS_PATH/mrtask-1.0-jar-with-dependencies.jar"
 
-
-LOCAL_PATH="${BASE_PATH}/data/*"
+LOCAL_PATH="${BASE_PATH}/mrtask/data/*"
 
 echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
 echo "THIS_FILE = $THIS_FILE"
