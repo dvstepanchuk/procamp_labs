@@ -5,7 +5,7 @@ import org.apache.hadoop.mapreduce.Mapper;
 
 import java.io.IOException;
 
-public class AirlinesDataMapper extends Mapper<Object, Text, Top5Airlines.AirlineIdentifierKey, Top5Airlines.JoinGenericWritable> {
+public class AirlinesDataMapper extends Mapper<Object, Text, AirlineIdentifierKey, JoinGenericWritable> {
     public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
         String[] recordFields = value.toString().split(",");
         String airlineId = recordFields[0];
@@ -15,10 +15,10 @@ public class AirlinesDataMapper extends Mapper<Object, Text, Top5Airlines.Airlin
             return;
         }
 
-        Top5Airlines.AirlineIdentifierKey recordKey = new Top5Airlines.AirlineIdentifierKey(airlineId, Top5Airlines.AirlineIdentifierKey.AIRLINE_RECORD);
-        Top5Airlines.Airline record = new Top5Airlines.Airline(airlineName);
+        AirlineIdentifierKey recordKey = new AirlineIdentifierKey(airlineId, AirlineIdentifierKey.AIRLINE_RECORD);
+        Airline record = new Airline(airlineName);
 
-        Top5Airlines.JoinGenericWritable genericRecord = new Top5Airlines.JoinGenericWritable(record);
+        JoinGenericWritable genericRecord = new JoinGenericWritable(record);
         context.write(recordKey, genericRecord);
     }
 }
