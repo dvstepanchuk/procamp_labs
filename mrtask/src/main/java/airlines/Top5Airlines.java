@@ -33,6 +33,8 @@ public class Top5Airlines {
 
         FileOutputFormat.setOutputPath(job, new Path(args[2], "out1"));
 
+        System.exit(job.waitForCompletion(true) ? 0 : 1);
+
         Job job2 = Job.getInstance(conf, "sort by frequency");
         job2.setJarByClass(Top5Airlines.class);
         job2.setMapperClass(KeyValueSwappingMapper.class);
@@ -45,6 +47,6 @@ public class Top5Airlines {
         FileInputFormat.addInputPath(job2, new Path(args[2], "out1"));
         FileOutputFormat.setOutputPath(job2, new Path(args[2], "out2"));
 
-        System.exit(job.waitForCompletion(true) ? 0 : 1);
+        System.exit(job2.waitForCompletion(true) ? 0 : 1);
     }
 }
