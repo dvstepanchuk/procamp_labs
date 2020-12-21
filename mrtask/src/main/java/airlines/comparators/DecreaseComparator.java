@@ -1,4 +1,4 @@
-package airlines;
+package airlines.comparators;
 
 import org.apache.hadoop.io.DoubleWritable;
 import org.apache.hadoop.io.WritableComparator;

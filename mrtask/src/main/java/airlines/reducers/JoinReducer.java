@@ -1,5 +1,9 @@
-package airlines;
+package airlines.reducers;
 
+import airlines.Airline;
+import airlines.AirlineIdentifierKey;
+import airlines.Flight;
+import airlines.JoinGenericWritable;
 import org.apache.hadoop.io.DoubleWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.io.Writable;

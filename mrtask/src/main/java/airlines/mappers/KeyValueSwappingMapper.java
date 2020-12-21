@@ -1,4 +1,4 @@
-package airlines;
+package airlines.mappers;
 
 import org.apache.hadoop.io.DoubleWritable;
 import org.apache.hadoop.io.Text;

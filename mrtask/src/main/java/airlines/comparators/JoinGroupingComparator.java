@@ -1,5 +1,6 @@
-package airlines;
+package airlines.comparators;
 
+import airlines.AirlineIdentifierKey;
 import org.apache.hadoop.io.WritableComparable;
 import org.apache.hadoop.io.WritableComparator;
 

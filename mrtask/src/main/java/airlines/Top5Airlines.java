@@ -1,15 +1,20 @@
 package airlines;
 
+import airlines.comparators.DecreaseComparator;
+import airlines.comparators.JoinGroupingComparator;
+import airlines.mappers.AirlinesDataMapper;
+import airlines.mappers.FlightsMapper;
+import airlines.mappers.KeyValueSwappingMapper;
+import airlines.reducers.JoinReducer;
+import airlines.reducers.Top5Reducer;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.*;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.input.MultipleInputs;
-import org.apache.hadoop.mapreduce.lib.input.SequenceFileInputFormat;
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
-import org.apache.hadoop.mapreduce.lib.output.SequenceFileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 
 public class Top5Airlines {

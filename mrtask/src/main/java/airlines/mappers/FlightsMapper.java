@@ -1,5 +1,8 @@
-package airlines;
+package airlines.mappers;
 
+import airlines.AirlineIdentifierKey;
+import airlines.Flight;
+import airlines.JoinGenericWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 

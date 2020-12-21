@@ -1,4 +1,4 @@
-package airlines;
+package airlines.reducers;
 
 import org.apache.hadoop.io.DoubleWritable;
 import org.apache.hadoop.io.Text;
