@@ -33,9 +33,11 @@ public class Top5Airlines {
 
         FileOutputFormat.setOutputPath(job, new Path(args[2], "out1"));
 
-        System.exit(job.waitForCompletion(true) ? 0 : 1);
+        if (!job.waitForCompletion(true)) {
+            System.exit(1);
+        }
 
-        Job job2 = Job.getInstance(conf, "sort by frequency");
+        Job job2 = Job.getInstance(conf, "top 5 sort by delay");
         job2.setJarByClass(Top5Airlines.class);
         job2.setMapperClass(KeyValueSwappingMapper.class);
         job2.setNumReduceTasks(1);
