@@ -43,9 +43,9 @@ public class Top5Airlines {
         job2.setJarByClass(Top5Airlines.class);
         job2.setMapperClass(KeyValueSwappingMapper.class);
         job2.setNumReduceTasks(1);
-        job2.setSortComparatorClass(DoubleWritable.Comparator.class);
+        job2.setSortComparatorClass(DecreaseComparator.class);
         job2.setReducerClass(Top5Reducer.class);
-        job2.setOutputKeyClass(LongWritable.class);
+        job2.setOutputKeyClass(DoubleWritable.class);
         job2.setOutputValueClass(Text.class);
         FileInputFormat.addInputPath(job2, new Path(args[2], "out1"));
         FileOutputFormat.setOutputPath(job2, new Path(args[2], "out2"));
