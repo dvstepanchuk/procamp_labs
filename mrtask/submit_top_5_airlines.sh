@@ -55,7 +55,8 @@ echo "-------------------------------------"
 mapReduceArguments=(
   "$APP_PATH"
   "airlines.Top5Airlines"
-  "$INPUT_PATH"
+  "$INPUT_PATH/airlines.csv"
+  "$INPUT_PATH/flights_short_list.csv"
   "$OUTPUT_PATH"
 )
 
