@@ -9,6 +9,7 @@ import org.apache.hadoop.mapreduce.lib.input.MultipleInputs;
 import org.apache.hadoop.mapreduce.lib.input.SequenceFileInputFormat;
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+import org.apache.hadoop.mapreduce.lib.output.SequenceFileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 
 public class Top5Airlines {
@@ -30,6 +31,8 @@ public class Top5Airlines {
         job.setGroupingComparatorClass(JoinGroupingComparator.class);
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(IntWritable.class);
+        job.setOutputFormatClass(SequenceFileOutputFormat.class);
+
 
         FileOutputFormat.setOutputPath(job, new Path(args[2], "out1"));
 
