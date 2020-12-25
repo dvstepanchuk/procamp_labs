@@ -10,4 +10,10 @@ Most Popular Airport task
 - upload most_popular_airport.scala to the home directory
 - start spark shell `spark-shell`
 - run `:load most_popular_airport.scala`
-- run `DfTask.main()`
+- run `DfTask.main(null)`
+
+Percentage of Canceled Flights task
+- upload canceled_flights.scala to the home directory
+- start spark shell `spark-shell`
+- run `:load canceled_flights.scala`
+- run `DfTask2.main(null)`
