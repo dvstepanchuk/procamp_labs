@@ -10,9 +10,11 @@ import java.io.IOException;
 
 public class AirlineIdentifierKey implements WritableComparable<AirlineIdentifierKey> {
 
+    // GLC: Can they be just of `int` type?
     public static final IntWritable AIRLINE_RECORD = new IntWritable(0);
     public static final IntWritable FLIGHT_RECORD = new IntWritable(1);
 
+    // GLC: There is no need to use Text /IntWritable -> out.write(); | in.readXXX
     public Text airlineId = new Text();
     public IntWritable recordType = new IntWritable();
 

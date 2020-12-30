@@ -8,7 +8,7 @@ import java.io.DataOutput;
 import java.io.IOException;
 
 public class Flight implements Writable {
-
+    // GLC: There is no need to use IntWritable -> out.write(); | in.readXXX
     public IntWritable departureDelay = new IntWritable();
 
     public Flight(){}

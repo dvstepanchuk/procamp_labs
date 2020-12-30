@@ -8,6 +8,7 @@ import java.io.DataOutput;
 import java.io.IOException;
 
 public class Airline implements Writable {
+    // GLC: There is no need to use Text -> out.write(); | in.readXXX
     public Text airlineName = new Text();
 
     public Airline(){}

@@ -7,6 +7,7 @@ public class JoinGenericWritable extends GenericWritable {
 
     private Class<? extends Writable>[] CLASSES = null;
 
+    // GLC: Won't it better to init it along with the field definition?
     {
         CLASSES = (Class<? extends Writable>[]) new Class[] {
                 Airline.class,

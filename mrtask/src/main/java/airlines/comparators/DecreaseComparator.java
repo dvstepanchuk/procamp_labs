@@ -13,6 +13,7 @@ public class DecreaseComparator extends WritableComparator {
                        byte[] b2, int s2, int l2) {
         double thisValue = readDouble(b1, s1);
         double thatValue = readDouble(b2, s2);
+        // GLC: Double.compare() ?
         return (thisValue < thatValue ? 1 : (thisValue == thatValue ? 0 : -1));
     }
 }

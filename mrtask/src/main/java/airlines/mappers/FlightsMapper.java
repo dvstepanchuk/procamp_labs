@@ -15,6 +15,7 @@ public class FlightsMapper extends Mapper<Object, Text, AirlineIdentifierKey, Jo
             return;
         }
         String airlineId = recordFields[4];
+        // GLC: It's better to use `int` here
         Integer departureDelay;
         if (recordFields[11].isEmpty()) {
             departureDelay = 0;

@@ -32,6 +32,7 @@ public class Top5Airlines {
         MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, AirlinesDataMapper.class);
         MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, FlightsMapper.class);
 
+        // GLC| It's worth adding a combiner. It will speed up overall job execution
         job.setReducerClass(JoinReducer.class);
         job.setGroupingComparatorClass(JoinGroupingComparator.class);
         job.setOutputKeyClass(Text.class);
