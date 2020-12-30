@@ -4,9 +4,12 @@
 `git clone https://github.com/omklymenko/procamp_labs.git`
 - Download flights.csv [source data](https://www.kaggle.com/usdot/flight-delays) and put into /procamp_labs/mrtask/data/
 - Run `hdfs dfs -copyFromLocal /home/olena_mklymenko_gmail_com/procamp_labs/mrtask/data/ /procamp_labs/top_5_airlines/input`
+    > GLC| It's usually shipped as a hive script 
 - Start Hive 
 `> hive`
 - Run in Hive
+    > GLC| It's better to create a dedicated database (you are using a default one)
+    > GLC| It's better to use external tables as you already have your data on hdfs
  1. `CREATE TABLE Airlines (iata_code string, airline string) row format delimited fields terminated by ',' tblproperties ("skip.header.line.count"="1");`
  2. `LOAD DATA INPATH '/procamp_labs/top_5_airlines/input/airlines.csv' OVERWRITE INTO TABLE Airlines;`
  3. `CREATE TABLE Flights (YEAR STRING,
@@ -42,6 +45,9 @@
      WEATHER_DELAY STRING) row format delimited fields terminated by ',' 
      tblproperties ("skip.header.line.count"="1");`
  4. `LOAD DATA INPATH '/procamp_labs/top_5_airlines/input/flights.csv.gz' OVERWRITE INTO TABLE Flights;`
+    > GLC| What about table creation?
+    > GLC| Is it the best solution in terms of execution performance? What alternatives could you think about?
+    > GLC| Recommend: Estimate execution performance with|w/o joining, review execution plan, play with execution engines
  5. `select a.airline, d.average from (
      select airline, round(avg(departure_delay), 2) as average
      from flights f
@@ -50,3 +56,4 @@
      on d.airline = a.iata_code
      order by d.average desc
      limit 5;`
+    > GLC| Any ideas on general testing solution?
